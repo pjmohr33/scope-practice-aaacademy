@@ -1,6 +1,6 @@
 /***********************************************************************
 Write a function reverseStr(str) that accepts a string and returns that string
-reversed. 
+reversed.
 
 Write this function using a fat arrow function!
 
@@ -12,7 +12,14 @@ let result3 = reverseStr("potato"); // returns "otatop"
 
 ***********************************************************************/
 
-// Your code here
+const reverseStr = (str) => {
+  let split = str.split('')
+  let newWord = ''
+  for(let i = split.length - 1; i >= 0; i--) {
+    newWord += split[i];
+  }
+  return newWord;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

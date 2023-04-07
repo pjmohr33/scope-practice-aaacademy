@@ -11,7 +11,11 @@ arrowRestSum(0); // => 0
 ***********************************************************************/
 
 const arrowRestSum = (...otherNums) => {
-  // Your code here
+  let res = 0;
+  otherNums.forEach(el => {
+    res += el;
+  })
+  return res;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

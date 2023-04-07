@@ -1,7 +1,7 @@
 /***********************************************************************
-Write a function named interrupter that accepts a single parameter `interruptingWord`: 
+Write a function named interrupter that accepts a single parameter `interruptingWord`:
   `interrupter(interruptingWord)`
-The interrupter function should return a function. 
+The interrupter function should return a function.
 When the function returned by interrupter is called with a sentence,
 the sentence will be returned with the original interruptingWord inserted
 between each word in the sentence.
@@ -12,7 +12,7 @@ console.log(rudePerson("how are you")); // prints "how what are what you"
 console.log(rudePerson("I like pie")); // prints "I what like what pie"
 
 
-Invoking the interrupter function again: 
+Invoking the interrupter function again:
 let rudePerson2 = interrupter("yo"); // => returns a function
 console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
@@ -20,7 +20,21 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 ***********************************************************************/
 
 function interrupter(interruptingWord) {
-  // Your code here
+
+  function createPhrase(sent) {
+    let res = [];
+    let split = sent.split(' ');
+    for(let i = 0; i < split.length; i++) {
+      if (split[i] !== split[split.length -1]) {
+      res.push(split[i]);
+      res.push(interruptingWord);
+      } else {
+      res.push(split[i]);
+      }
+    }
+    return res.join(' ');
+  }
+  return createPhrase;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
